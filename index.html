@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Find national parks near you">
+        <title>National Park Locator</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header>
+            <form class="form-inline">
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="City" name="city" />
+                <label for="state">State:</label>
+                <input type="text" id="state" placeholder="State Code" name="state" />
+                <button type="submit" id="submit">SUBMIT</button>
+            </form>
+        </header>
+        <div id="map"></div>
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy9fQxgPVbo-eLhVqlmHQUDCxmvCOoIzI&callback=initMap"></script>
+    </body>
+</html>
