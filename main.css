@@ -13,8 +13,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
-    background-color: #fff;
+    padding: 5px;
+    background-color: #1a73e8;
     border-bottom: 2px solid rgb(228, 228, 228);
 }
 
@@ -26,23 +26,30 @@ header {
 
 .form-inline label {
     margin: 5px 10px 5px 0;
-    color: #484c61;
+    letter-spacing: .4px;
+    color: #fff;
 }
 
 .form-inline input {
     vertical-align: middle;
     margin: 5px 15px 5px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    height: 36px;
+    padding-left: 10px;
+    background-color: rgba(255,255,255,.12);
+    border-radius: 2px;
+    border: none;
+    color: rgba(0, 0, 0, 0.99);
   }
+
+.form-inline input:focus {
+  background-color: #fff;
+}
 
 .form-inline button {
     padding: 10px 20px;
     background-color: #039be5;
     border: none;
-    border-radius: 3px;
+    border-radius: 2px;
     color: white;
   }
 
