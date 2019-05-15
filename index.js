@@ -61,6 +61,14 @@ var map;
 var markers = [];
 var listeners = [];
 
+const image = {
+  url: 'mountain-solid.svg',
+  size: new google.maps.Size(65, 65),
+  origin: new google.maps.Point(0, 0),
+  anchor: new google.maps.Point(17, 34),
+  scaledSize: new google.maps.Size(23, 23)
+};
+
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -86,14 +94,6 @@ function makeContent(item) {
 }
 
 function addMarker(item) {
-  
-  const image = {
-    url: 'mountain-solid.svg',
-    size: new google.maps.Size(65, 65),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(23, 23)
-  };
 
   const marker = new google.maps.Marker({
     position: formatLatLong(item.latLong),
@@ -169,22 +169,21 @@ function getParks(stateCode) {
   const queryString = formatQueryParams(params);
   const url = searchURL + '?' + queryString;
 
-  console.log(url);
-
   fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
       }
-      throw new Error(response.statusText);
     })
     .then(responseJson => {
-      console.log(responseJson.data);
       responseJson.data.forEach(item => {
         addMarker(item);
       });
       setMapOnAll(map);
     })
+    .catch (e => {
+      alert('Error searching for parks');
+    });
 }
 
 function initMap() {
@@ -204,6 +203,7 @@ function initMap() {
 
     geocodeAddress(address);
 
+    //convert to uppercase
     if (states.indexOf(stateCode) > -1) {
       getParks(stateCode);
     }
