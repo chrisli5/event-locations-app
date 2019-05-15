@@ -61,14 +61,6 @@ var map;
 var markers = [];
 var listeners = [];
 
-const image = {
-  url: 'mountain-solid.svg',
-  size: new google.maps.Size(65, 65),
-  origin: new google.maps.Point(0, 0),
-  anchor: new google.maps.Point(17, 34),
-  scaledSize: new google.maps.Size(23, 23)
-};
-
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -94,6 +86,13 @@ function makeContent(item) {
 }
 
 function addMarker(item) {
+  const image = {
+    url: 'mountain-solid.svg',
+    size: new google.maps.Size(65, 65),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(23, 23)
+  };
 
   const marker = new google.maps.Marker({
     position: formatLatLong(item.latLong),
