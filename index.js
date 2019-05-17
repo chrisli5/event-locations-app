@@ -191,7 +191,7 @@ function initMap() {
     zoom: 10
   });
 
-  $('#submit').click(function(event) {
+  $('form').submit(function(event) {
     event.preventDefault();
     deleteMarkers();
     removeListeners();
