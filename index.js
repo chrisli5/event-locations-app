@@ -208,3 +208,12 @@ function initMap() {
     }
   });
 }
+
+function closeIntro() {
+  $('#intro-button').click(function(event) {
+    event.preventDefault();
+    $('#intro').hide();
+  })
+}
+
+$(closeIntro);

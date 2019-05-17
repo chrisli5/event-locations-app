@@ -13,12 +13,17 @@
         <header>
             <form class="form-inline">
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" />
+                <input type="text" id="city" name="city"/>
                 <label for="state">State Code:</label>
-                <input type="text" id="state" name="state" />
+                <input type="text" id="state" name="state" required />
                 <button type="submit" id="submit">SUBMIT</button>
             </form>
         </header>
+        <div id="intro">
+            <h2>National Parks Locator</h2>
+            <p>Simply enter a state code (ex. CA, UT) or city and state code into the form above to see where national parks are located in that area, you can then click on each park icon for additional information. A valid state code is required.</p>
+            <button id="intro-button" type="submit">Got it!</button>
+        </div>
         <div id="map"></div>
         <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="index.js"></script>

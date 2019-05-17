@@ -18,6 +18,37 @@ header {
     border-bottom: 2px solid rgb(228, 228, 228);
 }
 
+#intro {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 240px;
+  background-color: #fff;
+  z-index: 999;
+  text-align: center;
+  border-radius: 5px;
+  padding-bottom: 5px;
+}
+
+#intro h2 {
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #1a73e8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+}
+
+#intro p {
+  text-align: left;
+  padding: 15px;
+  padding-top: 0;
+}
+
 .form-inline {
     display: flex;
     flex-flow: row wrap;
@@ -45,7 +76,7 @@ header {
   background-color: #fff;
 }
 
-.form-inline button {
+button {
     padding: 10px 20px;
     background-color: #039be5;
     border: none;
@@ -53,7 +84,7 @@ header {
     color: white;
   }
 
-.form-inline button:hover {
+button:hover {
     background-color:rgb(3, 143, 212);
   }
   
