@@ -1,8 +1,7 @@
 # National Parks Locator App
 
 ## Screenshot
-https://ibb.co/7nffSx3
-
+![alt text](https://ibb.co/7nffSx3 "App Screenshot")
 ## Summary
 This app allows users to locate national parks near a city. The app uses the Google Maps API along with the National Parks API to provide geographic information regarding each park.
 
