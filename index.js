@@ -60,6 +60,7 @@ let states = [ "AK",
 var map;
 var markers = [];
 var listeners = [];
+var prevInfoWindow = false;
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
@@ -103,6 +104,10 @@ function addMarker(item) {
   const content = makeContent(item);
 
   const listener = google.maps.event.addDomListener(marker, 'click', function() {
+    if(prevInfoWindow) {
+      prevInfoWindow.close();
+    }
+    prevInfoWindow = content;
     content.open(map, marker);
   });
 
@@ -181,7 +186,7 @@ function getParks(stateCode) {
       setMapOnAll(map);
     })
     .catch (e => {
-      alert('Error searching for parks');
+      alert('Error searching for parks!');
     });
 }
 
@@ -197,14 +202,14 @@ function initMap() {
     removeListeners();
 
     const city = $('#city').val();
-    const stateCode = $('#state').val();
+    const stateCode = $('#state').val().toUpperCase();
     const address = `${city}, ${stateCode}`;
 
-    geocodeAddress(address);
-
-    //convert to uppercase
     if (states.indexOf(stateCode) > -1) {
+      geocodeAddress(address);
       getParks(stateCode);
+    } else {
+      alert('Invalid state code!');
     }
   });
 }
